@@ -6,12 +6,13 @@ pygame.display.set_caption("First Game")
 
 x = 50
 y = 50
-width = 40
-height = 60
 vel = 5
 
 run = True
 
+img = pygame.image.load("C:\\Users\\DELL\\Downloads\\gfg.png")
+
+clock = pygame.time.Clock()
 while run:
     pygame.time.delay(100)
     win.fill((0,0,0))
@@ -34,7 +35,8 @@ while run:
     if keys[pygame.K_DOWN]:
         y += vel
       
-    pygame.draw.rect(win, (255,0,0), (x, y, width, height))   
+    win.blit(img,(x,y))
+    clock.tick(60)
     pygame.display.update() 
     
 pygame.quit()
